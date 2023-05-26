@@ -1,4 +1,4 @@
-import { User } from '../../components/User'
+import { User } from './User'
 import { Posts } from './Posts'
 import { HomeContainer } from './styles'
 
