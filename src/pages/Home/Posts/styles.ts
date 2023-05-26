@@ -13,8 +13,6 @@ export const FilterContainer = styled.form`
   flex-direction: column;
   gap: 1rem;
 
-  width: 54rem;
-
   input {
     border-radius: 5px;
     border: 1px solid;
