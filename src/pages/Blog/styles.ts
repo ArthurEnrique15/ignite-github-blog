@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const BlogContainer = styled.div`
+export const BlogContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background-color: ${({ theme }) => theme['base-input']};
+  gap: 3rem;
 `

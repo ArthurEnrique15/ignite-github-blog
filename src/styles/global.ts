@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* background-color: ${(props) => props.theme['gray-800']};
-    color: ${(props) => props.theme['gray-100']}; */
+    background-color: ${({ theme }) => theme['base-background']};
+    height: 100%;
+    /* color: ${(props) => props.theme['gray-100']}; */
     -webkit-font-smoothing: antialiased;
   }
 
