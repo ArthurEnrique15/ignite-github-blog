@@ -64,8 +64,8 @@ export const PostCard = styled.div`
 
   gap: 1rem;
 
-  max-height: 16.25rem;
-  max-width: 26rem;
+  height: 16.25rem;
+  width: 26rem;
 
   padding: 2rem;
 
@@ -94,6 +94,8 @@ export const PostCardHeader = styled.div`
 
   gap: 1rem;
 
+  height: 3.25rem;
+
   h1 {
     display: -webkit-box;
     overflow: hidden;
@@ -103,7 +105,7 @@ export const PostCardHeader = styled.div`
     font-weight: 700;
     font-size: 1.25rem;
 
-    line-height: 160%;
+    line-height: 130%;
 
     color: ${(props) => props.theme['base-title']};
 
@@ -119,7 +121,7 @@ export const PostCardHeader = styled.div`
 export const PostCardDescription = styled.div`
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   overflow: hidden;
 
   color: ${(props) => props.theme['base-text']};
