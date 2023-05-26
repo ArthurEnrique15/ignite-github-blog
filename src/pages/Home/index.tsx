@@ -1,16 +1,16 @@
 import { Header } from '../../components/Header'
 import { User } from '../../components/User'
 import { Posts } from './Posts'
-import { BlogContainer } from './styles'
+import { HomeContainer } from './styles'
 
-export function Blog() {
+export function Home() {
   return (
     <>
       <Header />
-      <BlogContainer>
+      <HomeContainer>
         <User />
         <Posts />
-      </BlogContainer>
+      </HomeContainer>
     </>
   )
 }

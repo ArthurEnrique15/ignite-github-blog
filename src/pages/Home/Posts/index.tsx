@@ -44,10 +44,47 @@ export function Posts() {
         </PostCard>
         <PostCard>
           <PostCardHeader>
+            <h1>JavaScript data types</h1>
+            <span>Há 1 dia</span>
+          </PostCardHeader>
+          <PostCardDescription>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </span>
+          </PostCardDescription>
+        </PostCard>
+        <PostCard>
+          <PostCardHeader>
             <h1>
               JavaScript data types and structures that are very nice to code
               hahaha
             </h1>
+            <span>Há 1 dia</span>
+          </PostCardHeader>
+          <PostCardDescription>
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </span>
+          </PostCardDescription>
+        </PostCard>
+        <PostCard>
+          <PostCardHeader>
+            <h1>JavaScript data types</h1>
             <span>Há 1 dia</span>
           </PostCardHeader>
           <PostCardDescription>
