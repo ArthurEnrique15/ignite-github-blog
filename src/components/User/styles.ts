@@ -92,9 +92,17 @@ export const GithubLinkInUserHeader = styled.a`
 
     font-size: 0.75rem;
 
+    border-bottom: 1px solid transparent;
+
     span {
       font-weight: 700;
       line-height: 160%;
+    }
+
+    transition: 0.5s;
+
+    &:hover {
+      border-color: ${({ theme }) => theme.blue};
     }
   }
 `

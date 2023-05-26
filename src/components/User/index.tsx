@@ -16,7 +16,6 @@ import {
   UserBio,
   UserFooter,
 } from './styles'
-import githubIcon from '../../assets/github.svg'
 
 export function User() {
   return (
