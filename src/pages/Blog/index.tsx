@@ -1,5 +1,6 @@
 import { Header } from '../../components/Header'
 import { User } from '../../components/User'
+import { Posts } from './Posts'
 import { BlogContainer } from './styles'
 
 export function Blog() {
@@ -8,7 +9,7 @@ export function Blog() {
       <Header />
       <BlogContainer>
         <User />
-        <h1>blog</h1>
+        <Posts />
       </BlogContainer>
     </>
   )
