@@ -1,3 +1,5 @@
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import {
   PostCardContainer,
   PostCardHeader,
@@ -13,12 +15,23 @@ interface PostCardProps {
 }
 
 export function PostCard({ title, createdAt, description }: PostCardProps) {
+  const createdAtFormatted = format(createdAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR,
+  })
+
+  const createdAtRelativeToNow = formatDistanceToNow(createdAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
     <StyledLink to="/issue">
       <PostCardContainer>
         <PostCardHeader>
           <h1>{title}</h1>
-          <span>{createdAt.toISOString()}</span>
+          <time title={createdAtFormatted} dateTime={createdAt.toISOString()}>
+            {createdAtRelativeToNow}
+          </time>
         </PostCardHeader>
         <PostCardDescription>
           <StyledReactMarkdown>{description}</StyledReactMarkdown>
