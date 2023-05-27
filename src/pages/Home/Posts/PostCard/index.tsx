@@ -9,12 +9,18 @@ import {
 } from './styles'
 
 interface PostCardProps {
+  number: number
   title: string
   createdAt: Date
   description: string
 }
 
-export function PostCard({ title, createdAt, description }: PostCardProps) {
+export function PostCard({
+  number,
+  title,
+  createdAt,
+  description,
+}: PostCardProps) {
   const createdAtFormatted = format(createdAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   })
@@ -25,7 +31,7 @@ export function PostCard({ title, createdAt, description }: PostCardProps) {
   })
 
   return (
-    <StyledLink to="/issue">
+    <StyledLink to={`/issue/${number}`}>
       <PostCardContainer>
         <PostCardHeader>
           <h1>{title}</h1>

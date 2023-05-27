@@ -28,7 +28,8 @@ export function Posts() {
         {issues.map((post) => {
           return (
             <PostCard
-              key={post.title}
+              key={post.number}
+              number={post.number}
               title={post.title}
               createdAt={new Date(post.created_at)}
               description={post.body}

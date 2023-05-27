@@ -18,8 +18,13 @@ import {
   TitleText,
 } from './styles'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { useParams } from 'react-router-dom'
 
 export function Issue() {
+  const { number: IssueNumber } = useParams()
+
+  console.log(IssueNumber)
+
   return (
     <IssueContainer>
       <TitleContainer>

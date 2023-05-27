@@ -8,6 +8,7 @@ import {
 import { api } from '../lib/axios'
 
 interface Issue {
+  number: number
   title: string
   body: string
   created_at: string
@@ -33,7 +34,18 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
       },
     })
 
-    setIssues(response.data.items)
+    const { items } = response.data
+
+    const issues = items.map((item: any) => {
+      return {
+        number: item.number,
+        title: item.title,
+        body: item.body,
+        created_at: item.created_at,
+      }
+    })
+
+    setIssues(issues)
   }, [])
 
   useEffect(() => {

@@ -22,8 +22,6 @@ import { GithubUserContext } from '../../../contexts/GithubUserContext'
 export function User() {
   const { user } = useContext(GithubUserContext)
 
-  console.log(user)
-
   return (
     <UserContainer>
       <ProfilePictureContainer>
