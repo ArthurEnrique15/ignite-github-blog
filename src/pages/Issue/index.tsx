@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import {
   faArrowUpRightFromSquare,
   faBuilding,
@@ -18,9 +19,12 @@ import {
   TitleText,
 } from './styles'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { GithubUserContext } from '../../contexts/GithubUserContext'
 import { useParams } from 'react-router-dom'
 
 export function Issue() {
+  const { user } = useContext(GithubUserContext)
+
   const { number: IssueNumber } = useParams()
 
   console.log(IssueNumber)
@@ -48,17 +52,17 @@ export function Issue() {
         <TitleFooter>
           <div>
             <FontAwesomeIcon icon={faGithub} />
-            <span>cameronwll</span>
+            <span>{user.login}</span>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faBuilding} />
-            <span>Rocketseat</span>
+            <span>{user.company}</span>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faUserGroup} />
-            <span>20 seguidores</span>
+            <span>{user.followers} seguidores</span>
           </div>
         </TitleFooter>
       </TitleContainer>
