@@ -3,6 +3,7 @@ import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 import { Router } from './Router'
 import { BrowserRouter } from 'react-router-dom'
+import { GithubUserProvider } from './contexts/GithubUserContext'
 
 export function App() {
   return (
@@ -10,7 +11,9 @@ export function App() {
       <GlobalStyle />
 
       <BrowserRouter>
-        <Router />
+        <GithubUserProvider>
+          <Router />
+        </GithubUserProvider>
       </BrowserRouter>
     </ThemeProvider>
   )

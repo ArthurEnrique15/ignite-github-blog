@@ -16,20 +16,26 @@ import {
   UserBio,
   UserFooter,
 } from './styles'
+import { useContext, useEffect } from 'react'
+import { GithubUserContext } from '../../../contexts/GithubUserContext'
 
 export function User() {
+  const { user } = useContext(GithubUserContext)
+
+  console.log(user)
+
   return (
     <UserContainer>
       <ProfilePictureContainer>
-        <img src="https://github.com/ArthurEnrique15.png" alt="" />
+        <img src={user?.avatar_url} alt="" />
       </ProfilePictureContainer>
       <UserInfo>
         <UserHeader>
           <UsernameInHeader>
-            <span>Cameron Williamson</span>
+            <span>{user.name}</span>
           </UsernameInHeader>
           <GithubLinkInUserHeader
-            href="https://github.com/ArthurEnrique15"
+            href={`https://github.com/${user.login}`}
             target="_blank"
           >
             <div>
@@ -40,25 +46,23 @@ export function User() {
         </UserHeader>
 
         <UserBio>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
+          <span>{user.bio}</span>
         </UserBio>
 
         <UserFooter>
           <div>
             <FontAwesomeIcon icon={faGithub} />
-            <span>cameronwll</span>
+            <span>{user?.login}</span>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faBuilding} />
-            <span>Rocketseat</span>
+            <span>{user?.company}</span>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faUserGroup} />
-            <span>20 seguidores</span>
+            <span>{user?.followers} seguidores</span>
           </div>
         </UserFooter>
       </UserInfo>

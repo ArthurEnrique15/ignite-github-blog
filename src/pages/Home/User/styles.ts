@@ -37,7 +37,7 @@ export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   height: 100%;
 
@@ -106,7 +106,10 @@ export const GithubLinkInUserHeader = styled.a`
     }
   }
 `
-export const UserBio = styled.span`
+export const UserBio = styled.div`
+  height: 100%;
+  width: 100%;
+
   line-height: 160%;
   color: ${({ theme }) => theme['base-text']};
 `
