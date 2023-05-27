@@ -3,6 +3,7 @@ import {
   PostCardHeader,
   PostCardDescription,
   StyledLink,
+  StyledReactMarkdown,
 } from './styles'
 
 interface PostCardProps {
@@ -20,7 +21,7 @@ export function PostCard({ title, createdAt, description }: PostCardProps) {
           <span>{createdAt.toISOString()}</span>
         </PostCardHeader>
         <PostCardDescription>
-          <span>{description}</span>
+          <StyledReactMarkdown>{description}</StyledReactMarkdown>
         </PostCardDescription>
       </PostCardContainer>
     </StyledLink>

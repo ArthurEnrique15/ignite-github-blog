@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -80,4 +81,29 @@ export const PostCardDescription = styled.div`
   overflow: hidden;
 
   color: ${(props) => props.theme['base-text']};
+`
+
+export const StyledReactMarkdown = styled(ReactMarkdown)`
+  font-size: 1rem;
+  line-height: 160%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  a {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+      color: ${({ theme }) => theme.blue};
+    }
+  }
 `
