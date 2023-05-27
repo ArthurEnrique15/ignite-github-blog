@@ -4,6 +4,7 @@ import { defaultTheme } from './styles/themes/default'
 import { Router } from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { GithubUserProvider } from './contexts/GithubUserContext'
+import { IssuesProvider } from './contexts/IssuesContext'
 
 export function App() {
   return (
@@ -12,7 +13,9 @@ export function App() {
 
       <BrowserRouter>
         <GithubUserProvider>
-          <Router />
+          <IssuesProvider>
+            <Router />
+          </IssuesProvider>
         </GithubUserProvider>
       </BrowserRouter>
     </ThemeProvider>

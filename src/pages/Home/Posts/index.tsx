@@ -1,4 +1,5 @@
-import { fakePosts } from '../../../constants/posts'
+import { useContext } from 'react'
+import { IssuesContext } from '../../../contexts/IssuesContext'
 import { PostCard } from './PostCard'
 import {
   PostsContainer,
@@ -8,25 +9,29 @@ import {
 } from './styles'
 
 export function Posts() {
+  const { issues } = useContext(IssuesContext)
+
+  console.log(issues)
+
   return (
     <PostsContainer>
       <FilterContainer>
         <FilterHeader>
           <h1>Publicações</h1>
-          <span>6 publicações</span>
+          <span>{issues.length} publicações</span>
         </FilterHeader>
 
         <input type="text" placeholder="Buscar conteúdo" />
       </FilterContainer>
 
       <PostsListContainer>
-        {fakePosts.map((post) => {
+        {issues.map((post) => {
           return (
             <PostCard
               key={post.title}
               title={post.title}
-              createdAt={post.createdAt}
-              description={post.description}
+              createdAt={new Date(post.created_at)}
+              description={post.body}
             />
           )
         })}

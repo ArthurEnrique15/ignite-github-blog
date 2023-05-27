@@ -6,6 +6,8 @@ export const PostsContainer = styled.div`
   gap: 3rem;
 
   margin-top: 1.5rem;
+
+  width: 54rem;
 `
 
 export const FilterContainer = styled.form`
