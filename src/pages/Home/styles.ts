@@ -8,4 +8,6 @@ export const HomeContainer = styled.main`
   gap: 3rem;
 
   height: 70rem;
+
+  margin-bottom: 10rem;
 `

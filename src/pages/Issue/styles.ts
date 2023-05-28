@@ -172,6 +172,11 @@ export const StyledReactMarkdown = styled(ReactMarkdown)`
     margin-bottom: 1rem;
   }
 
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
   li {
     margin-left: 1.5rem;
   }
@@ -209,5 +214,7 @@ export const StyledReactMarkdown = styled(ReactMarkdown)`
     border-radius: 6px;
     padding: 1rem;
     background-color: ${({ theme }) => theme['base-post']};
+
+    margin-bottom: 1rem;
   }
 `
