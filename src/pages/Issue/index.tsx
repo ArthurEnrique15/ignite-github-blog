@@ -61,7 +61,7 @@ export function Issue() {
         body: issueInfo.body,
         author: issueInfo.user.login,
         comments: issueInfo.comments,
-        url: issueInfo.url,
+        url: issueInfo.html_url,
         createdAtFormatted,
         createdAtRelativeToNow,
       })
@@ -83,7 +83,7 @@ export function Issue() {
             </GoBackLink>
           </StyledLink>
 
-          <GithubLink href={issue.url}>
+          <GithubLink href={issue.url} target="_blank">
             <span>Ver no Github</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </GithubLink>
