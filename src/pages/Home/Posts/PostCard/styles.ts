@@ -20,7 +20,6 @@ export const PostCardContainer = styled.div`
 
   gap: 1rem;
 
-  height: 16.25rem;
   width: 26rem;
 
   padding: 2rem;
@@ -39,6 +38,11 @@ export const PostCardContainer = styled.div`
 
   &:hover {
     border-color: ${(props) => props.theme['base-span']};
+  }
+
+  @media (max-width: 768px) {
+    width: 16rem;
+    padding: 1.5rem;
   }
 `
 
@@ -64,13 +68,23 @@ export const PostCardHeader = styled.div`
     line-height: 130%;
 
     color: ${(props) => props.theme['base-title']};
-
-    max-width: 16rem;
   }
 
   time {
     font-size: 0.875rem;
     color: ${(props) => props.theme['base-span']};
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+
+    gap: 0.25rem;
+
+    h1 {
+      height: 1.5rem;
+      -webkit-line-clamp: 1;
+    }
   }
 `
 
@@ -81,6 +95,10 @@ export const PostCardDescription = styled.div`
   overflow: hidden;
 
   color: ${(props) => props.theme['base-text']};
+
+  @media (max-width: 768px) {
+    -webkit-line-clamp: 4;
+  }
 `
 
 export const StyledReactMarkdown = styled(ReactMarkdown)`

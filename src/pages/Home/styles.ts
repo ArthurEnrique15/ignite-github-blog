@@ -7,5 +7,14 @@ export const HomeContainer = styled.div`
 
   gap: 3rem;
 
+  width: 58rem;
+
+  padding: 0 2rem;
+
+  margin: auto;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `

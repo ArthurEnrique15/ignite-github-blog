@@ -7,7 +7,18 @@ export const IssueContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  width: 58rem;
+
+  padding: 0 2rem;
+
+  margin: auto;
+  margin-bottom: 3rem;
+
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const TitleContainer = styled.div`
@@ -19,7 +30,7 @@ export const TitleContainer = styled.div`
 
   padding: 2rem;
 
-  width: 54rem;
+  width: 100%;
 
   background-color: ${({ theme }) => theme['base-post']};
   color: white;
@@ -27,6 +38,11 @@ export const TitleContainer = styled.div`
   border-radius: 10px;
 
   margin-top: -5.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
 `
 
 export const TitleHeader = styled.header`
@@ -45,6 +61,15 @@ export const TitleHeader = styled.header`
   line-height: 160%;
 
   border-bottom: 1px solid transparent;
+
+  a:focus,
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    text-decoration: none;
+    color: ${({ theme }) => theme.blue};
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -60,23 +85,7 @@ export const StyledLink = styled(Link)`
   }
 `
 
-export const GoBackLink = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  border-bottom: 1px solid transparent;
-
-  cursor: pointer;
-
-  transition: 0.5s;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.blue};
-  }
-`
-
-export const GithubLink = styled.a`
+export const TitleHeaderLink = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -91,13 +100,8 @@ export const GithubLink = styled.a`
     border-color: ${({ theme }) => theme.blue};
   }
 
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-    color: ${({ theme }) => theme.blue};
+  @media (max-width: 768px) {
+    gap: 0.25rem;
   }
 `
 
@@ -108,15 +112,21 @@ export const TitleText = styled.div`
 
   width: 100%;
 
-  height: 2rem;
+  min-height: 2rem;
 
   margin-top: 0.75rem;
+
+  line-height: 160%;
 
   span {
     font-weight: 700;
     font-size: 1.5rem;
 
     color: ${({ theme }) => theme['base-title']};
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
   }
 `
 
@@ -144,32 +154,37 @@ export const TitleFooter = styled.footer`
     color: ${({ theme }) => theme['base-label']};
   }
 
-  span {
+  span,
+  time {
     color: ${({ theme }) => theme['base-span']};
   }
 
-  time {
-    color: ${({ theme }) => theme['base-span']};
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
   }
 `
 
 export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 
-  width: 54rem;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1rem;
+  }
 `
 
 export const StyledReactMarkdown = styled(ReactMarkdown)`
   color: ${({ theme }) => theme['base-text']};
 
-  /* font-weight: 700; */
   line-height: 160%;
 
   h1 {
     margin-bottom: 1rem;
+    line-height: 160%;
   }
 
   hr {

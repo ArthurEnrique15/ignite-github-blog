@@ -8,14 +8,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   DescriptionContainer,
-  GithubLink,
-  GoBackLink,
   IssueContainer,
   StyledLink,
   StyledReactMarkdown,
   TitleContainer,
   TitleFooter,
   TitleHeader,
+  TitleHeaderLink,
   TitleText,
 } from './styles'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -75,16 +74,18 @@ export function Issue() {
       <TitleContainer>
         <TitleHeader>
           <StyledLink to="/">
-            <GoBackLink>
+            <TitleHeaderLink>
               <FontAwesomeIcon icon={faChevronLeft} />
               <span>Voltar</span>
-            </GoBackLink>
+            </TitleHeaderLink>
           </StyledLink>
 
-          <GithubLink href={issue.url} target="_blank">
-            <span>Ver no Github</span>
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </GithubLink>
+          <a href={issue.url} target="_blank" rel="noreferrer">
+            <TitleHeaderLink>
+              <span>Ver no Github</span>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </TitleHeaderLink>
+          </a>
         </TitleHeader>
 
         <TitleText>

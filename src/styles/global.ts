@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    /* box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']}; */
   }
 
   body {
@@ -24,5 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
     line-height: 130%;
+  }
+
+  @media only screen and (max-width: 768) {
+    html {
+      font-size: 87.5%;
+    }
   }
 `

@@ -7,7 +7,7 @@ export const PostsContainer = styled.div`
 
   margin-top: 1.5rem;
 
-  width: 54rem;
+  width: 100%;
 `
 
 export const FilterContainer = styled.div`
@@ -56,4 +56,10 @@ export const PostsListContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
 
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
