@@ -8,8 +8,6 @@ export const IssueContainer = styled.div`
   align-items: center;
 
   gap: 0.5rem;
-
-  height: 100%;
 `
 
 export const TitleContainer = styled.div`
