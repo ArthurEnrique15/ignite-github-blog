@@ -1,9 +1,9 @@
-import { useContext } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import {
   faArrowUpRightFromSquare,
-  faBuilding,
+  faCalendarDay,
   faChevronLeft,
-  faUserGroup,
+  faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -21,13 +21,56 @@ import {
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { GithubUserContext } from '../../contexts/GithubUserContext'
 import { useParams } from 'react-router-dom'
+import { api } from '../../lib/axios'
+import { formatDateRelativeToNow } from '../../util/format-date-relative-to-now'
+
+interface IssueType {
+  title: string
+  body: string
+  author: string
+  comments: number
+  url: string
+  createdAtFormatted: string
+  createdAtRelativeToNow: string
+}
 
 export function Issue() {
   const { user } = useContext(GithubUserContext)
 
-  const { number: IssueNumber } = useParams()
+  const { number: issueNumber } = useParams()
 
-  console.log(IssueNumber)
+  const [issue, setIssue] = useState<IssueType>({} as IssueType)
+
+  const fetchIssue = useCallback(async () => {
+    const response = await api.get(
+      `https://api.github.com/repos/${user.login}/ignite-github-blog/issues/${issueNumber}}`,
+    )
+
+    const issueInfo = response.data
+
+    console.log(response.data)
+
+    if (response.data) {
+      const {
+        formattedDate: createdAtFormatted,
+        dateRelativeToNow: createdAtRelativeToNow,
+      } = formatDateRelativeToNow(new Date(issueInfo.created_at))
+
+      setIssue({
+        title: issueInfo.title,
+        body: issueInfo.body,
+        author: issueInfo.user.login,
+        comments: issueInfo.comments,
+        url: issueInfo.url,
+        createdAtFormatted,
+        createdAtRelativeToNow,
+      })
+    }
+  }, [user, issueNumber])
+
+  useEffect(() => {
+    fetchIssue()
+  }, [fetchIssue])
 
   return (
     <IssueContainer>
@@ -40,34 +83,39 @@ export function Issue() {
             </GoBackLink>
           </StyledLink>
 
-          <GithubLink>
+          <GithubLink href={issue.url}>
             <span>Ver no Github</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </GithubLink>
         </TitleHeader>
 
         <TitleText>
-          <span>JavaScript data types and data structures</span>
+          <span>{issue.title}</span>
         </TitleText>
         <TitleFooter>
           <div>
             <FontAwesomeIcon icon={faGithub} />
-            <span>{user.login}</span>
+            <span>{issue.author}</span>
           </div>
 
           <div>
-            <FontAwesomeIcon icon={faBuilding} />
-            <span>{user.company}</span>
+            <FontAwesomeIcon icon={faCalendarDay} />
+            <time
+              title={issue.createdAtFormatted}
+              // dateTime={issue.createdAt.toISOString()}
+            >
+              {issue.createdAtRelativeToNow}
+            </time>
           </div>
 
           <div>
-            <FontAwesomeIcon icon={faUserGroup} />
-            <span>{user.followers} seguidores</span>
+            <FontAwesomeIcon icon={faComment} />
+            <span>{issue.comments} comentários</span>
           </div>
         </TitleFooter>
       </TitleContainer>
       <DescriptionContainer>
-        <StyledReactMarkdown>Hello, **world**!</StyledReactMarkdown>
+        <StyledReactMarkdown>{issue.body}</StyledReactMarkdown>
       </DescriptionContainer>
     </IssueContainer>
   )

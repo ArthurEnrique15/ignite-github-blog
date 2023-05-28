@@ -76,7 +76,7 @@ export const GoBackLink = styled.div`
   }
 `
 
-export const GithubLink = styled.div`
+export const GithubLink = styled.a`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -89,6 +89,15 @@ export const GithubLink = styled.div`
 
   &:hover {
     border-color: ${({ theme }) => theme.blue};
+  }
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: ${({ theme }) => theme.blue};
   }
 `
 
@@ -138,6 +147,10 @@ export const TitleFooter = styled.footer`
   span {
     color: ${({ theme }) => theme['base-span']};
   }
+
+  time {
+    color: ${({ theme }) => theme['base-span']};
+  }
 `
 
 export const DescriptionContainer = styled.div`
@@ -152,6 +165,49 @@ export const DescriptionContainer = styled.div`
 export const StyledReactMarkdown = styled(ReactMarkdown)`
   color: ${({ theme }) => theme['base-text']};
 
-  font-weight: 700;
+  /* font-weight: 700; */
   line-height: 160%;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  li {
+    margin-left: 1.5rem;
+  }
+
+  a {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+      color: ${({ theme }) => theme.blue};
+    }
+  }
+
+  ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  code {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+
+    border-radius: 6px;
+
+    background-color: ${({ theme }) => theme['base-post']};
+  }
+
+  pre {
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: ${({ theme }) => theme['base-post']};
+  }
 `
