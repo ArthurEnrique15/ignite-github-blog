@@ -2,19 +2,6 @@ import ReactMarkdown from 'react-markdown'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-    color: ${({ theme }) => theme.blue};
-  }
-`
-
 export const IssueContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,6 +45,19 @@ export const TitleHeader = styled.header`
   line-height: 160%;
 
   border-bottom: 1px solid transparent;
+`
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: ${({ theme }) => theme.blue};
+  }
 `
 
 export const GoBackLink = styled.div`
