@@ -232,4 +232,8 @@ export const StyledReactMarkdown = styled(ReactMarkdown)`
 
     margin-bottom: 1rem;
   }
+
+  img {
+    max-width: 100%;
+  }
 `
