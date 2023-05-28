@@ -48,8 +48,6 @@ export function Issue() {
 
     const issueInfo = response.data
 
-    console.log(response.data)
-
     if (response.data) {
       const {
         formattedDate: createdAtFormatted,
