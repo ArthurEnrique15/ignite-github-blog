@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { IssuesContext } from '../../../contexts/IssuesContext'
 import { PostCard } from './PostCard'
 import {
@@ -9,9 +9,12 @@ import {
 } from './styles'
 
 export function Posts() {
+  const [search, setSearch] = useState('')
   const { issues } = useContext(IssuesContext)
 
-  console.log(issues)
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setSearch(event.target.value.toLowerCase())
+  }
 
   return (
     <PostsContainer>
@@ -21,11 +24,25 @@ export function Posts() {
           <span>{issues.length} publicações</span>
         </FilterHeader>
 
-        <input type="text" placeholder="Buscar conteúdo" />
+        <input
+          type="text"
+          placeholder="Buscar conteúdo"
+          value={search}
+          onChange={handleInputChange}
+        />
       </FilterContainer>
 
       <PostsListContainer>
         {issues.map((post) => {
+          const postTitle = post.title.toLowerCase()
+          const postBody = post.body.toLowerCase()
+
+          if (
+            search !== '' &&
+            !(postTitle.includes(search) || postBody.includes(search))
+          )
+            return null
+
           return (
             <PostCard
               key={post.number}

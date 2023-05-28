@@ -10,7 +10,7 @@ export const PostsContainer = styled.div`
   width: 54rem;
 `
 
-export const FilterContainer = styled.form`
+export const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
