@@ -37,6 +37,7 @@ export function Posts() {
           const postTitle = post.title.toLowerCase()
           const postBody = post.body.toLowerCase()
 
+          // TODO create a more advanced filter, separating words by space and searching for each one
           if (
             search !== '' &&
             !(postTitle.includes(search) || postBody.includes(search))
