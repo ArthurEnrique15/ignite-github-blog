@@ -21,6 +21,7 @@ export const PostCardContainer = styled.div`
   gap: 1rem;
 
   width: 26rem;
+  height: 100%;
 
   padding: 2rem;
 
@@ -62,6 +63,8 @@ export const PostCardHeader = styled.div`
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
+    max-width: 15rem;
+
     font-weight: 700;
     font-size: 1.25rem;
 
@@ -92,6 +95,8 @@ export const PostCardDescription = styled.div`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
+  box-orient: vertical;
+  line-clamp: 5;
   overflow: hidden;
 
   color: ${(props) => props.theme['base-text']};
