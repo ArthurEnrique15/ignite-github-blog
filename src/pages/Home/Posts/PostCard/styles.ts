@@ -92,12 +92,14 @@ export const PostCardHeader = styled.div`
 `
 
 export const PostCardDescription = styled.div`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  box-orient: vertical;
-  line-clamp: 5;
+  height: 8rem;
   overflow: hidden;
+
+  span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
 
   color: ${(props) => props.theme['base-text']};
 

@@ -35,7 +35,9 @@ export function PostCard({
           </time>
         </PostCardHeader>
         <PostCardDescription>
-          <StyledReactMarkdown>{description}</StyledReactMarkdown>
+          <span>
+            <StyledReactMarkdown>{description}</StyledReactMarkdown>
+          </span>
         </PostCardDescription>
       </PostCardContainer>
     </StyledLink>
